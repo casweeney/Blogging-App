@@ -20,8 +20,7 @@
                         <table class="table table-striped">
                             <tr>
                                 <th>Title</th>
-                                <th></th>
-                                <th></th>
+                                <th colspan="2">Action</th>
                             </tr>
                             @foreach($posts as $post)
                                 <tr>

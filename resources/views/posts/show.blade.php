@@ -9,10 +9,14 @@
     <hr>
     <code>Written on {{$post->created_at}} by {{$post->user->name}}</code>
     <br>
-    <a href="/posts/{{$post->id}}/edit" class="btn btn-light">Edit</a>
+    @if(!Auth::guest())
+        @if(Auth::user()->id == $post->user_id)
+            <a href="/posts/{{$post->id}}/edit" class="btn btn-light">Edit</a>
 
-    {!!Form::open(['action' => ['PostsController@destroy', $post->id], 'method'=>'POST', 'class'=>'pull-right'])!!}
-        {{Form::hidden('_method', 'DELETE')}}
-        {{Form::submit('Delete', ['class'=>'btn btn-danger btn-sm'])}}
-    {!!Form::close()!!}
+            {!!Form::open(['action' => ['PostsController@destroy', $post->id], 'method'=>'POST', 'class'=>'pull-right'])!!}
+                {{Form::hidden('_method', 'DELETE')}}
+                {{Form::submit('Delete', ['class'=>'btn btn-danger btn-sm'])}}
+            {!!Form::close()!!}
+        @endif
+    @endif
 @endsection
