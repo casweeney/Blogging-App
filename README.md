@@ -1,3 +1,7 @@
+# A Simple Laravel Blogging Web App. A practice project for learning Laravel Framework. See Usage and Implementation on https://blog.toxaswift.com
+
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
